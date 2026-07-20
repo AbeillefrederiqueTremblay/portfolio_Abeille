@@ -4,27 +4,48 @@
     <meta charset="UTF-8">
     <title>Portfolio – Abeille</title>
     <link rel="stylesheet" href="style.css">
+
+<!--     Import Font   -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
 </head>
 
 <body>
+<!--HEADER-->
 <header>
-    <h1>Abeille – Portfolio Artistique</h1>
+    <h1>Abeille-Frédérique Tremblay</h1>
+
     <nav>
+
+        <div class="dropdown">
+            <span class="dropbtn">Mes activités</span>
+            <div class="dropdown-content">
+                <a href="illustration.html" class="dropdown-texte">Illustration</a>
+                <a href="liogravure.html">Linogravure</a>
+                <a href="vetements.html">Vêtements</a>
+                <a href="projetsDivers.html">Projets divers</a>
+                <a href="photos.html">Photos</a>
+
+            </div>
+        </div>
+
         <a href="index.html">Accueil</a>
-        <a href="galerie.html">Galerie</a>
         <a href="apropos.html">À propos</a>
         <a href="contact.html">Contact</a>
+
     </nav>
 </header>
 
 
-<h2 class="titre-section">Mon travail</h2>
-
+<!-- mes activités-->
 <section class="activites">
 
     <div class="activite">
-        <h3>Illustration</h3>
-        <img src="assets/testPomme.jpg" alt="Abeille">
+        <a href="illustration.html" class="activite-link">
+            <h3>Illustrations</h3>
+            <img src="assets/testPomme.jpg" alt="Abeille">
+        </a>
     </div>
 
 
@@ -39,12 +60,21 @@
     </div>
 
     <div class="activite">
-        <h3>Projet divers</h3>
+        <h3>Projets divers</h3>
         <img src="assets/testPomme.jpg" alt="Abeille">
+    </div>
+
+    <div class="activite">
+        <a href="illustration.html" class="activite-link">
+            <h3>Photos</h3>
+            <img src="assets/testPomme.jpg" alt="Abeille">
+        </a>
     </div>
 
 </section>
 
+
+<!--FOOTER-->
 <footer>
     <p>© 2026 Abeille</p>
 </footer>

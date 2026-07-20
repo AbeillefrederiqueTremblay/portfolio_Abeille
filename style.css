@@ -1,23 +1,35 @@
+html, body {
+    height: 100%;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Schoolbell', sans-serif;
     margin: 0;
     background: #fafafa;
     color: #333;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
     background: #fff;
     padding: 20px;
     border-bottom: 1px solid #ddd;
-    text-align: center;
-}
 
-nav a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav a,
+nav span {
     margin: 0 15px;
     text-decoration: none;
     color: #444;
     font-weight: bold;
+    font-size: 20px;
 }
+
+
 
 /*   ACTIVITE  */
 
@@ -26,22 +38,22 @@ nav a {
     flex-direction: row;
     justify-content: center;
     gap: 40px;
-    padding: 20px;
+    padding: 100px;
 }
 
 .activite {
     display: flex;
-    flex-direction: column;   /* Nom au-dessus, image en dessous */
+    flex-direction: column; /* Nom au-dessus, image en dessous */
     align-items: center;
     text-align: center;
 }
 
 .activite img {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     border-radius: 10px;
-    margin-top: 10px;
+    margin-right: auto;
 }
 
 .activite h3 {
@@ -71,10 +83,59 @@ nav a {
 footer {
     text-align: center;
     padding: 20px;
-    margin-top: 40px;
+    margin-top: auto;
     background: #eee;
 }
 
-.titre-section {
-    text-align: center;
+.activite-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+/* Container du dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Bouton visible */
+.dropbtn {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Contenu caché */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+/* Style des liens */
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9em;
+    font-weight: normal;
+
+}
+
+/* Apparition au survol */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Effet au survol des liens */
+.dropdown-content a:hover {
+    background-color: #f0f0f0;
+}
+
