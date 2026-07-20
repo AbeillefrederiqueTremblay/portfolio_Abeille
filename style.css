@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #fafafa;
+    color: #333;
+}
+
+header {
+    background: #fff;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #444;
+    font-weight: bold;
+}
+
+/*   ACTIVITE  */
+
+.activites {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+}
+
+.activite {
+    display: flex;
+    flex-direction: column;   /* Nom au-dessus, image en dessous */
+    align-items: center;
+    text-align: center;
+}
+
+.activite img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.activite h3 {
+    margin: 0;
+    font-size: 1.4em;
+}
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.about, .contact {
+    padding: 40px 20px;
+    max-width: 700px;
+    margin: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background: #eee;
+}
+
+.titre-section {
+    text-align: center;
+}
