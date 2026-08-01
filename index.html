@@ -5,21 +5,27 @@
     <title>Portfolio – Abeille</title>
     <link rel="stylesheet" href="style.css">
 
-<!--     Import Font   -->
+    <!--     Import Font   -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+
+
 </head>
 
 <body>
 <!--HEADER-->
 <header>
-    <h1>Abeille-Frédérique Tremblay</h1>
+    <h1>⋆˚𖤓˖°Abeille-Frédérique Tremblay °˖𖤓˚⋆</h1>
 
     <nav>
+        <a href="index.html">Accueil</a>
 
         <div class="dropdown">
-            <span class="dropbtn">Mes activités</span>
+
+            <span class="dropbtn">Mes projets</span>
             <div class="dropdown-content">
                 <a href="illustration.html" class="dropdown-texte">Illustration</a>
                 <a href="liogravure.html">Linogravure</a>
@@ -29,46 +35,65 @@
 
             </div>
         </div>
-
-        <a href="index.html">Accueil</a>
-        <a href="apropos.html">À propos</a>
         <a href="contact.html">Contact</a>
 
     </nav>
 </header>
 
+<!-- section soleil-->
+<section class="soleil">
+
+    <div class="soleil-image">
+        <img src="assets/femme.jpg" alt="Abeille">
+    </div>
+
+    <div class="soleil-text">
+        <p class="quote2">
+            « Salut, je suis un artiste qui fait plein de choses d'artiste »
+            <span class="quote-author2">— Abeille</span>
+        </p>
+
+
+    </div>
+
+</section>
 
 <!-- mes activités-->
 <section class="activites">
 
-    <div class="activite">
-        <a href="illustration.html" class="activite-link">
-            <h3>Illustrations</h3>
+
+    <div class="activite-titre">
+        <h2> ⋆˚࿔ Mes projets ࿔˚⋆ </h2>
+    </div>
+
+
+    <div class="activite-row">
+
+        <div class="activite">
+            <a href="illustration.html" class="activite-link">
+                <h3>Illustrations</h3>
+                <img src="assets/testPomme.jpg" alt="Abeille">
+            </a>
+        </div>
+
+
+        <div class="activite">
+            <h3>Linogravure</h3>
             <img src="assets/testPomme.jpg" alt="Abeille">
-        </a>
-    </div>
+        </div>
 
-
-    <div class="activite">
-        <h3>Linogravure</h3>
-        <img src="assets/testPomme.jpg" alt="Abeille">
-    </div>
-
-    <div class="activite">
-        <h3>Vêtements</h3>
-        <img src="assets/testPomme.jpg" alt="Abeille">
-    </div>
-
-    <div class="activite">
-        <h3>Projets divers</h3>
-        <img src="assets/testPomme.jpg" alt="Abeille">
-    </div>
-
-    <div class="activite">
-        <a href="illustration.html" class="activite-link">
-            <h3>Photos</h3>
+        <div class="activite">
+            <h3>Vêtements</h3>
             <img src="assets/testPomme.jpg" alt="Abeille">
-        </a>
+        </div>
+
+
+        <div class="activite">
+            <a href="illustration.html" class="activite-link">
+                <h3>Photos</h3>
+                <img src="assets/testPomme.jpg" alt="Abeille">
+            </a>
+        </div>
     </div>
 
 </section>
@@ -76,7 +101,19 @@
 
 <!--FOOTER-->
 <footer>
-    <p>© 2026 Abeille</p>
+    <p>© 2026 Abeille - Tous droits réservés</p>
 </footer>
+
+<script>
+    window.addEventListener("scroll", function() {
+        const header = document.querySelector("header");
+        if (window.scrollY > 50) {
+            header.classList.add("shrink");
+        } else {
+            header.classList.remove("shrink");
+        }
+    });
+</script>
+
 </body>
 </html>

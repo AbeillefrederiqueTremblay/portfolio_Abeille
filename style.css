@@ -3,96 +3,78 @@ html, body {
 }
 
 body {
-    font-family: 'Schoolbell', sans-serif;
+    /*font-family: 'Schoolbell', sans-serif;*/
+    font-family: 'Playfair Display', serif;
+    /*font-family: 'Inter', sans-serif;*/
     margin: 0;
     background: #fafafa;
-    color: #333;
+    color: #e0e2d7;
     display: flex;
     flex-direction: column;
+
+    background-image: url("assets/papier.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-header {
-    background: #fff;
-    padding: 20px;
-    border-bottom: 1px solid #ddd;
+/* ---------- HEADER ---------- */
 
+header {
+    background-color: #27221e;
+    color: #e0e2d7;
+
+    padding: 10px 0; /* pas de padding horizontal */
+
+    /* Layout */
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    /* Fixé en haut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    /* Animation shrink */
+    transition: padding 0.4s ease, font-size 0.4s ease;
 }
-nav a,
-nav span {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #444;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-
-
-/*   ACTIVITE  */
-
-.activites {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 40px;
-    padding: 100px;
+header h1 {
+    margin-left: 60px; /* espace à gauche */
 }
 
-.activite {
-    display: flex;
-    flex-direction: column; /* Nom au-dessus, image en dessous */
-    align-items: center;
-    text-align: center;
+/* Header rétréci au scroll */
+header.shrink {
+    padding: 5px 30px;
 }
 
-.activite img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-right: auto;
-}
-
-.activite h3 {
-    margin: 0;
+header.shrink h1 {
     font-size: 1.4em;
 }
 
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 20px;
-}
-
-.gallery img {
-    width: 100%;
-    border-radius: 8px;
-}
-
-.about, .contact {
-    padding: 40px 20px;
-    max-width: 700px;
-    margin: auto;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: auto;
-    background: #eee;
-}
-
-.activite-link {
-    text-decoration: none;
-    color: inherit;
+/* Liens du menu */
+nav {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    gap: 20px; /* espace entre les liens */
+    margin-right: 60px; /* espace à droite */
+}
+
+nav a,
+nav span {
+    text-decoration: none;
+    color: #e0e2d7;
+    font-weight: bold;
+    font-size: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+nav a:hover,
+nav span:hover {
+    color: #cdd7a1;        /* couleur douce */
+    transform: scale(1.05);
+    transition: 0.2s ease;
 }
 
 /* Container du dropdown */
@@ -105,7 +87,6 @@ footer {
 .dropbtn {
     font-weight: bold;
     cursor: pointer;
-    padding: 10px;
 }
 
 /* Contenu caché */
@@ -139,3 +120,143 @@ footer {
     background-color: #f0f0f0;
 }
 
+/*  ----------  SOLEIL  ----------  */
+.soleil {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+
+    height: 600px; /* hauteur de la section — ajuste comme tu veux */
+    padding: 0px;
+    margin-top: 120px;
+}
+
+.soleil-image img {
+    max-height: 850px; /* tu choisis la taille */
+    width: auto;
+    object-fit: contain;
+    border-radius: 20px; /* optionnel, pour un look plus doux */
+}
+
+
+.soleil-text {
+    max-width: 600px;
+    font-size: 1.5em;
+    color: #2b2621;
+}
+.quote2 {
+    font-size: 1.4em;
+    font-style: italic;
+    color: #2b2621;
+    margin: 20px 0;
+}
+
+.quote-author2 {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #4c632c;
+}
+
+
+
+/*  ----------  ACTIVITE  ---------- */
+
+.activites {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 40px;
+    padding: 100px;
+
+    background-color: #2b2621;
+
+}
+
+/* Titre de la section */
+.activite-titre {
+    font-size: 2.2em;
+    margin: 0;
+    text-align: center;
+    color: white;
+}
+
+/* Conteneur des images en row */
+.activite-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* pour éviter les décalages sur petit écran */
+}
+
+.activite {
+    display: flex;
+    flex-direction: column; /* Nom au-dessus, image en dessous */
+    align-items: center;
+    text-align: center;
+
+    transition: transform 0.3s ease;
+
+}
+
+.activite img {
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+
+.activite:hover {
+    transform: scale(1.05);
+}
+
+.activite h3 {
+    margin: 4;
+    font-size: 1.4em;
+}
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.about, .contact {
+    padding: 40px 20px;
+    max-width: 700px;
+    margin: auto;
+}
+
+
+
+.activite-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+footer {
+    text-align: right;
+    padding: 10px 40px;
+    margin-top: auto;
+    background-color: #2b2621;
+}
