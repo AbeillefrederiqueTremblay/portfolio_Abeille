@@ -1,0 +1,97 @@
+
+/*  ----------  DIGITAL HEADER  ----------  */
+
+.digital-header {
+    position: relative;
+}
+
+.digital-header img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+    position: relative;
+    z-index: 0; /* image au-dessus de l’overlay */
+}
+
+.digital-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4em;
+    font-family: 'Playfair Display', serif;
+    color: #fafafa;
+    text-shadow:
+            0 3px 3px rgba(0,0,0,0.4),
+            0 8px 20px rgba(0,0,0,0.6),
+            0 0 12px rgba(0,0,0,0.5);
+
+    position: absolute;
+    z-index: 2; /* texte au-dessus de tout */
+}
+
+
+.digital-header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    z-index: 1; /* overlay derrière l’image */
+    background: rgba(0, 0, 0, 0.35); /* foncé doux */
+}
+
+
+
+/*  ----------  SOLEIL  ----------  */
+.notifs {
+    padding: 60px 40px;
+    color: #2b2621;
+    text-align: center;
+}
+
+.notifs h2 {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.carousel-track {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track img {
+    max-height: 500px;   /* s’ajuste selon la taille */
+    width: auto;         /* garde les proportions */
+    object-fit: contain; /* jamais coupé */
+    border-radius: 20px;
+}
+
+.carousel-btn {
+    background-color: #2b2621;
+    color: #e0e2d7;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.carousel-btn:hover {
+    transform: scale(1.1);
+    background-color: #3a332d;
+}

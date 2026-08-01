@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio – Art Digital</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="artDigitalCSS.css">
+
+    <title>Illustrations</title>
+</head>
+<body>
+
+<!-- ---------- HEADER ---------- -->
+
+<header>
+    <h1>⋆˚𖤓˖°Abeille-Frédérique Tremblay °˖𖤓˚⋆</h1>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+
+        <div class="dropdown">
+
+            <span class="dropbtn">Mes projets</span>
+            <div class="dropdown-content">
+                <a href="artDigital.html" class="dropdown-texte">Art Digital</a>
+                <a href="liogravure.html">Linogravure</a>
+                <a href="vetements.html">Sketchs</a>
+                <a href="projetsDivers.html">Peinture</a>
+
+            </div>
+        </div>
+        <a href="contact.html">Contact</a>
+
+    </nav>
+</header>
+
+<!-- ---------- DIGITAL HEADER ---------- -->
+
+<section class="digital-header">
+    <div class="digital-title">Art Digital</div>
+    <img src="artDigitalImage/paysage_01.jpg" alt="Art Digital - Paysage">
+</section>
+
+
+<!-- ---------- HEADER ---------- -->
+
+<section class="notifs">
+    <h2>Notifs</h2>
+
+    <div class="carousel">
+        <button class="carousel-btn prev">←</button>
+
+        <div class="carousel-track">
+            <img src="artDigitalImage/notifsPoster.jpg" alt="Notifs Poster">
+            <img src="artDigitalImage/bibliothequeNuit_01.jpg" alt="Bibliothèque Nuit 01">
+            <img src="artDigitalImage/bibliothequeNuit_02.jpg" alt="Bibliothèque Nuit 02">
+            <img src="artDigitalImage/bibliothequeNuit_03.jpg" alt="Bibliothèque Nuit 03">
+            <img src="artDigitalImage/bibliothequeNuit_04.jpg" alt="Bibliothèque Nuit 04">
+        </div>
+
+        <button class="carousel-btn next">→</button>
+    </div>
+</section>
+
+
+<script>
+    const track = document.querySelector('.carousel-track');
+    const images = Array.from(track.children);
+    let index = 0;
+
+    function updateCarousel() {
+        track.innerHTML = "";
+        track.appendChild(images[index]);
+    }
+
+    document.querySelector('.next').addEventListener('click', () => {
+        index = (index + 1) % images.length;
+        updateCarousel();
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+        index = (index - 1 + images.length) % images.length;
+        updateCarousel();
+    });
+
+    updateCarousel(); // affiche la première image
+</script>
+
+
+
+
+</body>
+</html>
