@@ -3,36 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Portfolio – Art Digital</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="artDigitalCSS.css">
-
+    <link rel="stylesheet" href="1.2Style.css">
+    <link rel="stylesheet" href="2.2artDigitalCSS.css">
+    <!-- CSS du header -->
+    <link rel="stylesheet" href="0.2header.css">
     <title>Illustrations</title>
 </head>
 <body>
 
 <!-- ---------- HEADER ---------- -->
-
-<header>
-    <h1>⋆˚𖤓˖°Abeille-Frédérique Tremblay °˖𖤓˚⋆</h1>
-
-    <nav>
-        <a href="index.html">Accueil</a>
-
-        <div class="dropdown">
-
-            <span class="dropbtn">Mes projets</span>
-            <div class="dropdown-content">
-                <a href="artDigital.html" class="dropdown-texte">Art Digital</a>
-                <a href="liogravure.html">Linogravure</a>
-                <a href="vetements.html">Sketchs</a>
-                <a href="projetsDivers.html">Peinture</a>
-
-            </div>
-        </div>
-        <a href="contact.html">Contact</a>
-
-    </nav>
-</header>
+<!--HEADER-->
 
 <!-- ---------- DIGITAL HEADER ---------- -->
 
@@ -134,7 +114,16 @@
 </script>
 
 <!-- ---------- HEADER SCRIPT ---------- -->
+<!-- Charger le header -->
+<script>
+    fetch("0.1header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.body.insertAdjacentHTML("afterbegin", data);
+        });
+</script>
 
+<!-- ---------- HEADER ---------- -->
 <script>
     window.addEventListener("scroll", function () {
         const header = document.querySelector("header");
@@ -145,6 +134,60 @@
         }
     });
 </script>
+
+<!-- ---------- SCRIPT BOX ZOOM------------>
+
+<div id="lightbox" class="lightbox">
+    <img id="lightbox-img" src="" alt="">
+</div>
+<script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    function enableZoomOn(selector) {
+        const images = document.querySelectorAll(selector);
+        images.forEach(img => {
+            img.onclick = () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+            };
+        });
+    }
+
+    // Linogravure
+    enableZoomOn('.linogravure-gallery img');
+
+    // Art Digital (bibliothèque + notifs)
+    enableZoomOn('.bibliotheque-grid img');
+    enableZoomOn('.projet-notifs-block img');
+
+    // Carrousel Ibis — dynamique
+    function updateCarouselZoom() {
+        enableZoomOn('.carousel-track img');
+    }
+
+    // Appel initial
+    updateCarouselZoom();
+
+    // Ré-attacher le zoom à chaque clic sur les flèches
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+
+    nextBtn.onclick = () => {
+        updateCarouselZoom();
+    };
+
+    prevBtn.onclick = () => {
+        updateCarouselZoom();
+    };
+
+    // Fermer le zoom
+    lightbox.onclick = () => {
+        lightbox.classList.remove('active');
+    };
+</script>
+
+
 
 
 </body>

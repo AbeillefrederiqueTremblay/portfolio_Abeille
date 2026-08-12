@@ -1,0 +1,130 @@
+/* ----- SECTION LINOGRAVURE (STYLE GALERIE MODERNE) ----- */
+.linogravure-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    padding: 140px 40px 80px;
+
+    background: #f5f5f5; /* gris clair doux */
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+/* --------------- IMAGES --------------- */
+.linogravure-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+
+    /* cadre blanc subtil */
+    border: 6px solid #ffffff;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    object-fit: cover;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.linogravure-gallery img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+
+/* --------------- LIGHTBOX --------------- */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+    z-index: 9999;
+}
+
+.lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    animation: zoomIn 0.3s ease;
+}
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+    z-index: 9999;
+}
+
+.lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+
+
+.linogravure-gallery {
+    background-image: url("assets/papier.jpg");
+    background-repeat: repeat;
+    background-size: 1200px; /* tu peux ajuster */
+}
+
+/* --------------- TITRE --------------- */
+.lino-title {
+    font-size: 4em;
+    text-align: center;
+    color: #2b2621;
+    font-family: 'Playfair Display', serif;
+    margin-top: 120px;
+    margin-bottom: 40px;
+    position: relative; /* nécessaire pour la ligne */
+    display: inline-block; /* pour centrer la ligne */
+}
+
+/* ----- LIGNE STYLISÉE SOUS LE TITRE ----- */
+.deco-line-lino::after {
+    content: "";
+    position: absolute;
+    bottom: 220px; /* distance sous le texte */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;      /* longueur de la ligne */
+    height: 4px;       /* épaisseur */
+    background-color: #2b2621; /* couleur de la ligne */
+    border-radius: 2px;
+}
+

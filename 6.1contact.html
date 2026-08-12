@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>contact</title>
+
+    <link rel="stylesheet" href="0.2header.css">
+    <link rel="stylesheet" href="6.2contact.css">
+
+</head>
+<body>
+<section class="contact-section">
+    <h2 class="contact-title deco-line-contact">Contact</h2>
+
+    <div class="contact-container">
+
+        <p class="contact-text">
+            Pour toute question, collaboration ou demande artistique,<br> tu peux me joindre ici :
+        </p>
+
+        <div class="contact-info">
+            <p><strong>Email :</strong> <a href="mailto:abeechat@hotmail.com">abeechat@hotmail.com</a></p>
+            <p><strong>Instagram :</strong> <a href="https://instagram.com/" target="_blank">@tonInstagram</a></p>
+            <p><strong>Téléphone :</strong> <span>000‑000‑0000</span></p>
+        </div>
+
+        <form class="contact-form">
+            <input type="text" placeholder="Votre nom" required>
+            <input type="email" placeholder="Votre email" required>
+            <textarea placeholder="Votre message" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+
+    </div>
+</section>
+
+
+<!-- ---------- HEADER SCRIPT ---------- -->
+<!-- Charger le header -->
+<script>
+    fetch("0.1header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.body.insertAdjacentHTML("afterbegin", data);
+        });
+</script>
+
+<!-- ---------- HEADER ---------- -->
+<script>
+    window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 50) {
+            header.classList.add("shrink");
+        } else {
+            header.classList.remove("shrink");
+        }
+    });
+</script>
+
+</body>
+</html>

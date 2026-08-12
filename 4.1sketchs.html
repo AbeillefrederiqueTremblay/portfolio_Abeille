@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Sketchs – Abeille</title>
+
+    <!-- CSS global -->
+    <link rel="stylesheet" href="1.2Style.css">
+
+    <!-- CSS spécifique à la page Sketchs -->
+    <link rel="stylesheet" href="4.2sketchs.css">
+
+    <!-- CSS du header -->
+    <link rel="stylesheet" href="0.2header.css">
+
+    <!-- Charger le header -->
+    <script>
+        fetch("0.1header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML("afterbegin", data);
+            });
+    </script>
+</head>
+
+<body>
+
+<!-- ---------------- SECTION SKETCH RÉALISTE ---------------- -->
+
+<section class="sketch-realiste">
+    <h2 class="section-title deco-line">Sketch réaliste</h2>
+
+    <div class="sketch-grid">
+        <img src="sketchs/sketch_realiste_01.jpg" alt="">
+        <img src="sketchs/sketch_realiste_02.jpg" alt="">
+        <img src="sketchs/sketch_realiste_03.jpg" alt="">
+        <img src="sketchs/sketch_realiste_04.jpg" alt="">
+        <img src="sketchs/sketch_realiste_05.jpg" alt="">
+        <img src="sketchs/sketch_realiste_06.jpg" alt="">
+        <img src="sketchs/sketch_realiste_07.jpg" alt="">
+        <img src="sketchs/sketch_realiste_08.jpg" alt="">
+    </div>
+</section>
+
+
+<!-- ---------------- SECTION D&D : LUMA ---------------- -->
+
+<section class="sketch-dnd">
+    <h2 class="section-title deco-line dnd-title">D&D – Luma</h2>
+
+    <div class="dnd-block">
+        <img src="sketchs/sketchs_lumaDND.jpg" alt="Luma">
+
+        <div class="dnd-text">
+            <h3>Luma</h3>
+            <p>
+                Luma est une jeune sorcière nomade qui canalise la lumière à travers des cristaux anciens.
+                Curieuse, intuitive et un peu téméraire, elle explore les ruines oubliées pour comprendre
+                l’origine de sa magie. Son compagnon, un petit esprit lumineux, la guide dans les moments
+                de doute et amplifie ses sorts.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<!-- ---------------- SECTION FLEURS ---------------- -->
+
+<section class="sketch-fleurs">
+    <h2 class="section-title deco-line">Fleurs</h2>
+
+    <div class="fleurs-grid">
+        <img src="sketchs/sketchs_fleurs.jpg" alt="">
+        <img src="sketchs/sketchs_femme.jpg" alt="">
+        <img src="sketchs/fleur_03.jpg" alt="">
+        <img src="sketchs/fleur_04.jpg" alt="">
+    </div>
+</section>
+
+
+<!-- ---------- SCRIPT ZOOM ---------- -->
+<div id="lightbox" class="lightbox">
+    <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    const allSketchImages = document.querySelectorAll('.sketch-grid img, .dnd-block img, .fleurs-grid img');
+
+    allSketchImages.forEach(img => {
+        img.addEventListener('click', () => {
+            lightboxImg.src = img.src;
+            lightbox.classList.add('active');
+        });
+    });
+
+    lightbox.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+    });
+</script>
+
+</body>
+</html>

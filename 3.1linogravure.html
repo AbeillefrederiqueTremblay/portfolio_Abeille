@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio – Linogravure</title>
+    <link rel="stylesheet" href="1.2Style.css">
+    <link rel="stylesheet" href="3.2linoCSS.css">
+    <!-- CSS du header -->
+    <link rel="stylesheet" href="0.2header.css">
+
+    <title>Illustrations</title>
+</head>
+<body>
+
+<!-- ---------- HEADER ---------- -->
+
+<!-- ---------- DIGITAL HEADER ---------- -->
+
+<section class="linogravure-gallery">
+    <h2 class="lino-title deco-line-lino">Linogravure</h2>
+
+    <img src="linoImage/lino_feeDesFleurs.jpg" alt="">
+    <img src="linoImage/lino_fraise.jpg" alt="">
+    <img src="linoImage/lino_insectEtoile.jpg" alt="">
+    <img src="linoImage/lino_italienne.jpg" alt="">
+    <img src="linoImage/lino_tournesol.jpg" alt="">
+</section>
+
+
+<!-- ---------- SCRIPT BOX ZOOM------------>
+<div id="lightbox" class="lightbox">
+    <img id="lightbox-img" src="" alt="">
+</div>
+<script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    // Images de la galerie linogravure
+    const linoImages = document.querySelectorAll('.linogravure-gallery img');
+
+    // Images de la section Art Digital
+    const digitalImages = document.querySelectorAll('.bibliotheque-grid img, .projet-notifs-block img');
+
+    function enableZoom(images) {
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+            });
+        });
+    }
+
+    enableZoom(linoImages);
+    enableZoom(digitalImages);
+
+    lightbox.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+    });
+</script>
+
+<!-- ---------- HEADER SCRIPT ---------- -->
+<!-- Charger le header -->
+<script>
+    fetch("0.1header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.body.insertAdjacentHTML("afterbegin", data);
+        });
+</script>
+
+<!-- ---------- HEADER ---------- -->
+<script>
+    window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 50) {
+            header.classList.add("shrink");
+        } else {
+            header.classList.remove("shrink");
+        }
+    });
+</script>
+</body>
+</html>

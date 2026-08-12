@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Portfolio – Abeille</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="1.2Style.css">
 
     <!--     Import Font   -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,32 +11,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
-
+    <!-- CSS du header -->
+    <link rel="stylesheet" href="0.2header.css">
 </head>
 
 <body>
 <!--HEADER-->
-<header>
-    <h1>⋆˚𖤓˖°Abeille-Frédérique Tremblay °˖𖤓˚⋆</h1>
-
-    <nav>
-        <a href="index.html">Accueil</a>
-
-        <div class="dropdown">
-
-            <span class="dropbtn">Mes projets</span>
-            <div class="dropdown-content">
-                <a href="artDigital.html" class="dropdown-texte">Art Digital</a>
-                <a href="linogravure.html">Linogravure</a>
-                <a href="vetements.html">Sketchs</a>
-                <a href="projetsDivers.html">Peinture</a>
-
-            </div>
-        </div>
-        <a href="contact.html">Contact</a>
-
-    </nav>
-</header>
+<div id="header"></div>
 
 <!-- section soleil-->
 <section class="soleil">
@@ -66,7 +47,7 @@
     <div class="activite-row">
 
         <div class="activite">
-            <a href="artDigital.html" class="activite-link">
+            <a href="2.1artDigital.html" class="activite-link">
                 <h3>Art Digital</h3>
                 <img src="artDigitalImage/notifsPoster.jpg" alt="Abeille">
             </a>
@@ -74,20 +55,22 @@
 
 
         <div class="activite">
-            <a href="linogravure.html" class="activite-link">
+            <a href="3.1linogravure.html" class="activite-link">
                 <h3>Linogravure</h3>
                 <img src="linoImage/lino_italienne.jpg" alt="Abeille">
             </a>
         </div>
 
         <div class="activite">
+            <a href="4.1sketchs.html" class="activite-link">
             <h3>Sketchs</h3>
             <img src="sketchs/sketchs_grosNez.jpg" alt="Abeille">
+            </a>
         </div>
 
 
         <div class="activite">
-            <a href="artDigital.html" class="activite-link">
+            <a href="5.1peinture.html" class="activite-link">
                 <h3>Peinture</h3>
                 <img src="peinture/peinture_singe.jpg" alt="Abeille">
             </a>
@@ -102,6 +85,18 @@
     <p>© 2026 Abeille - Tous droits réservés</p>
 </footer>
 
+
+<!-- ---------- HEADER SCRIPT ---------- -->
+<!-- Charger le header -->
+<script>
+    fetch("0.1header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.body.insertAdjacentHTML("afterbegin", data);
+        });
+</script>
+
+<!-- ---------- HEADER ---------- -->
 <script>
     window.addEventListener("scroll", function () {
         const header = document.querySelector("header");

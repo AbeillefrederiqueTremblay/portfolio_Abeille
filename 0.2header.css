@@ -1,0 +1,101 @@
+/* ---------- HEADER ---------- */
+
+header {
+    background-color: #27221e;
+    color: #e0e2d7;
+
+    padding: 10px 0; /* pas de padding horizontal */
+
+    /* Layout */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* Fixé en haut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    /* Animation shrink */
+    transition: padding 0.4s ease, font-size 0.4s ease;
+}
+header h1 {
+    margin-left: 60px; /* espace à gauche */
+}
+
+/* Header rétréci au scroll */
+header.shrink {
+    padding: 5px 30px;
+}
+
+header.shrink h1 {
+    font-size: 1.4em;
+}
+
+/* Liens du menu */
+nav {
+    display: flex;
+    gap: 20px; /* espace entre les liens */
+    margin-right: 60px; /* espace à droite */
+}
+
+nav a,
+nav span {
+    text-decoration: none;
+    color: #e0e2d7;
+    font-weight: bold;
+    font-size: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+nav a:hover,
+nav span:hover {
+    color: #cdd7a1;        /* couleur douce */
+    transform: scale(1.05);
+    transition: 0.2s ease;
+}
+
+/* Container du dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Bouton visible */
+.dropbtn {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Contenu caché */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+/* Style des liens */
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9em;
+    font-weight: normal;
+
+}
+
+/* Apparition au survol */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Effet au survol des liens */
+.dropdown-content a:hover {
+    background-color: #f0f0f0;
+}

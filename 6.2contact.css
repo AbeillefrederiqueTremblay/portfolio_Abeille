@@ -1,0 +1,92 @@
+body {
+    background-color: #3a332d; /* brun doux */
+}
+
+/* ----- SECTION CONTACT ----- */
+.contact-section {
+    background-color: #3a332d; /* brun doux */
+    padding: 120px 40px;
+    color: #f2f0e9;
+    text-align: center;
+}
+
+/* ----- TITRE ----- */
+.contact-title {
+    font-size: 4em;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 40px;
+    color: #f2f0e9;
+    position: relative;
+}
+
+.deco-line-contact::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background-color: #f2f0e9;
+    border-radius: 2px;
+}
+
+/* ----- TEXTE ----- */
+.contact-text {
+    font-size: 1.4em;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ----- INFO ----- */
+.contact-info {
+    font-size: 1.3em;
+    margin-bottom: 60px;
+    line-height: 1.8;
+}
+
+.contact-info a {
+    color: #f2f0e9;
+    text-decoration: underline;
+}
+
+/* ----- FORMULAIRE ----- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.1em;
+    background-color: #2b2621;
+    color: #f2f0e9;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: none;
+}
+
+.contact-form button {
+    padding: 15px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    border: none;
+    background-color: #f2f0e9;
+    color: #2b2621;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #d6d4cd;
+}
