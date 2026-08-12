@@ -37,31 +37,76 @@
 <!-- ---------- DIGITAL HEADER ---------- -->
 
 <section class="digital-header">
-    <div class="digital-title">Art Digital</div>
+    <div class="digital-title">~ Art Digital ~</div>
     <img src="artDigitalImage/paysage_01.jpg" alt="Art Digital - Paysage">
 </section>
 
 
-<!-- ---------- HEADER ---------- -->
+<!-- ---------- CAROUSELLE ---------- -->
 
-<section class="notifs">
-    <h2>Notifs</h2>
+<section class="carouselle">
+    <h2 class="deco-line-ibis">Ibis</h2>
+    <p class="projet-intro-ibis">
+        Notifs est un projet réalisé à l’université, explorant la communication visuelle,
+        les notifications et l’esthétique numérique. Bibliothèque de Nuit est une série
+        photographique capturant l’ambiance nocturne d’un espace de lecture.
+    </p>
 
     <div class="carousel">
         <button class="carousel-btn prev">←</button>
 
         <div class="carousel-track">
-            <img src="artDigitalImage/notifsPoster.jpg" alt="Notifs Poster">
-            <img src="artDigitalImage/bibliothequeNuit_01.jpg" alt="Bibliothèque Nuit 01">
-            <img src="artDigitalImage/bibliothequeNuit_02.jpg" alt="Bibliothèque Nuit 02">
-            <img src="artDigitalImage/bibliothequeNuit_03.jpg" alt="Bibliothèque Nuit 03">
-            <img src="artDigitalImage/bibliothequeNuit_04.jpg" alt="Bibliothèque Nuit 04">
+            <img src="artDigitalImage/Ibis_01.jpg" alt="Ibis_01">
+            <img src="artDigitalImage/Ibis_02.jpg" alt="Ibis_02">
+            <img src="artDigitalImage/Ibis_03.jpg" alt="Ibis_03">
+
         </div>
 
         <button class="carousel-btn next">→</button>
     </div>
 </section>
 
+<!-- -------------------- NOTIF -------------------- -->
+
+<section class="projet-notifs">
+
+    <h1 class="projet-title deco-line-notifs">Notifs</h1>
+
+    <p class="projet-intro">
+        Notifs est un projet réalisé à l’université, explorant la communication visuelle,
+        les notifications et l’esthétique numérique. Bibliothèque de Nuit est une série
+        photographique capturant l’ambiance nocturne d’un espace de lecture.
+    </p>
+
+    <!-- Présentation Notifs -->
+    <div class="projet-notifs-block">
+        <img src="artDigitalImage/notifsPoster.jpg" alt="Projet Notifs">
+
+        <div class="projet-notifs-text">
+            <h3 class="notifs-subtitle">Résumé court</h3>
+            <p>Lya se retrouve absorbée dans un monde virtuel rempli de vidéo.</p>
+            <p>Hypnotisée par cet univers, elle s'y perd et fais la connaissance d'un étange clown.</p>
+            <p> Comment faire pour se sortir de ce labyrinthe de lumières où chaque pas semble l'éloigner d'avantage.
+
+            </p>
+        </div>
+    </div>
+
+    <!-- Bibliothèque de Nuit -->
+    <h3 class="bibliotheque-subtitle">Bibliothèque de Nuit</h3>
+
+    <div class="bibliotheque-grid">
+        <img src="artDigitalImage/bibliothequeNuit_01.jpg" alt="">
+        <img src="artDigitalImage/bibliothequeNuit_02.jpg" alt="">
+        <img src="artDigitalImage/bibliothequeNuit_03.jpg" alt="">
+        <img src="artDigitalImage/bibliothequeNuit_04.jpg" alt="">
+    </div>
+
+</section>
+
+
+
+<!-- ---------- CAROUSELLE SCRIPT ---------- -->
 
 <script>
     const track = document.querySelector('.carousel-track');
@@ -84,9 +129,22 @@
     });
 
     updateCarousel(); // affiche la première image
+
+
 </script>
 
+<!-- ---------- HEADER SCRIPT ---------- -->
 
+<script>
+    window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 50) {
+            header.classList.add("shrink");
+        } else {
+            header.classList.remove("shrink");
+        }
+    });
+</script>
 
 
 </body>

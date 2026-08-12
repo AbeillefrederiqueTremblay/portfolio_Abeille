@@ -1,8 +1,48 @@
 
+.deco-line-ibis, .deco-line-notifs {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.deco-line-ibis::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;      /* longueur de la ligne */
+    height: 4px;      /* épaisseur */
+    background-color: #3d4a21; /* couleur de la ligne */
+    border-radius: 2px;
+
+}
+
+.deco-line-notifs::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;      /* longueur de la ligne */
+    height: 4px;      /* épaisseur */
+    background-color: #ffffff; /* couleur de la ligne */
+    border-radius: 2px;
+
+}
+
+
+
 /*  ----------  DIGITAL HEADER  ----------  */
+body {
+    background-color: #2b2621;
+}
+
 
 .digital-header {
     position: relative;
+    background-color: #2b2621;
+
 }
 
 .digital-header img {
@@ -19,13 +59,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 4em;
+    font-size: 8em;
     font-family: 'Playfair Display', serif;
     color: #fafafa;
-    text-shadow:
-            0 3px 3px rgba(0,0,0,0.4),
-            0 8px 20px rgba(0,0,0,0.6),
-            0 0 12px rgba(0,0,0,0.5);
+    text-shadow: 0 3px 3px rgba(0, 0, 0, 0.4),
+    0 8px 20px rgba(0, 0, 0, 0.6),
+    0 0 12px rgba(0, 0, 0, 0.5);
 
     position: absolute;
     z-index: 2; /* texte au-dessus de tout */
@@ -45,16 +84,22 @@
 }
 
 
-
-/*  ----------  SOLEIL  ----------  */
-.notifs {
+/*  ----------  Carouselle Ibis ----------  */
+.carouselle {
     padding: 60px 40px;
-    color: #2b2621;
+    color: #3d4b21;
     text-align: center;
+
+    /*background-color: #2b2621;*/
+    background-image: url("assets/papier.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
 
-.notifs h2 {
-    font-size: 2.2em;
+.carouselle h2 {
+    font-size: 4em;
     margin-bottom: 30px;
 }
 
@@ -74,14 +119,14 @@
 }
 
 .carousel-track img {
-    max-height: 500px;   /* s’ajuste selon la taille */
-    width: auto;         /* garde les proportions */
+    max-height: 650px; /* s’ajuste selon la taille */
+    width: auto; /* garde les proportions */
     object-fit: contain; /* jamais coupé */
     border-radius: 20px;
 }
 
 .carousel-btn {
-    background-color: #2b2621;
+    background-color: #637232;
     color: #e0e2d7;
     border: none;
     padding: 10px 20px;
@@ -94,4 +139,95 @@
 .carousel-btn:hover {
     transform: scale(1.1);
     background-color: #3a332d;
+}
+.projet-intro-ibis {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    font-size: 1.3em;
+    line-height: 1.6;
+    font-family: 'Playfair Display', serif;
+    color: #3d4b21;
+}
+
+/* ---------- SECTION NOTIFS ---------- */
+/* ----- SECTION GLOBALE ----- */
+.projet-notifs {
+    padding: 120px 40px 80px;
+    background: linear-gradient(180deg, #2b2621 0%, #3a332d 100%);
+    color: #ffffff;
+    text-align: center;
+}
+
+/* ----- TITRE PRINCIPAL ----- */
+.projet-title {
+    font-size: 7em;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+/* ----- INTRO ----- */
+.projet-intro {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    font-size: 1.3em;
+    line-height: 1.6;
+    font-family: 'Playfair Display', serif;
+    color: #e0e0e0;
+}
+
+/* ----- BLOC NOTIFS ----- */
+.projet-notifs-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 80px;
+}
+
+.projet-notifs-block img {
+    width: auto;
+    max-width: 450px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+
+.projet-notifs-text {
+    max-width: 500px;
+    text-align: left;
+    font-size: 1.2em;
+    line-height: 1.6;
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+}
+
+/* ----- SOUS-TITRES ----- */
+.notifs-subtitle,
+.bibliotheque-subtitle {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+}
+
+/* ----- GRILLE BIBLIOTHÈQUE ----- */
+.bibliotheque-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bibliotheque-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.deco-line-notifs {
+    margin-top: 0;   /* même distance du haut */
+    margin-bottom: 30px; /* optionnel, pour uniformité */
 }
